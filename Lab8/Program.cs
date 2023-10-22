@@ -1,8 +1,9 @@
 ﻿
 namespace Lab8
 {
-    internal class Program
-    {
+    
+        internal class Program
+   {
         static void Main(string[] args)
         {
             Employee empolyee1 = new Employee(4142, "Ragnar", "Male", 774124);
@@ -20,12 +21,56 @@ namespace Lab8
             stack.Push(empolyee3);
             stack.Push(empolyee4);
             stack.Push(empolyee5);
-           
-            foreach (Employee employee in stack) 
+
+            //Stack<Employee> stackCopy = new Stack<Employee>(stack);
+
+            foreach (Employee employee in stack)
             {
-                
+
+                Console.Write($"ID:{employee.Id} ");
+                Console.Write($"|NAME: {employee.Name} ");
+                Console.Write($"|SEX: {employee.Gender} ");
+                Console.WriteLine($"|SALARY: {employee.Salary} SEK  ");
+                Console.WriteLine($"Objects left in stack {stack.Count} ");
             }
-            
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine();
+            while (stack.Count > 0)
+            {
+                Employee popEmployee = stack.Pop();
+
+                    Console.Write($"ID:{popEmployee.Id} ");
+                    Console.Write($"|NAME: {popEmployee.Name} ");
+                    Console.Write($"|SEX: {popEmployee.Gender} ");
+                    Console.WriteLine($"|SALARY: {popEmployee.Salary} SEK  ");
+                    Console.WriteLine($"Objects left in stack {stack.Count} ");
+            }
+            stack.Push(empolyee1);
+            stack.Push(empolyee2);
+            stack.Push(empolyee3);
+            stack.Push(empolyee4);
+            stack.Push(empolyee5);
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine();
+
+
+
+           Employee peekEmployee = stack.Peek();
+
+            Console.WriteLine($"ID:{peekEmployee.Id} |NAME: {peekEmployee.Name} |SEX: {peekEmployee.Gender} |SALARY: {peekEmployee.Salary} SEK ");
+            Console.WriteLine($"Objects left in stack {stack.Count} ");
+            Console.WriteLine($"ID:{peekEmployee.Id} |NAME: {peekEmployee.Name} |SEX: {peekEmployee.Gender} |SALARY: {peekEmployee.Salary} SEK ");
+            Console.WriteLine($"Objects left in stack {stack.Count} ");
+
+
+
+
+
+
+
+
         }
-    }
+   }
 }
