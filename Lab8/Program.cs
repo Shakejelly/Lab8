@@ -80,9 +80,42 @@ namespace Lab8
             }
 
 
+            List<Employee> employeeList = new List<Employee>();
+            employeeList.Add(employee1);
+            employeeList.Add(employee2);
+            employeeList.Add(employee3);
+            employeeList.Add(employee4);
+            employeeList.Add(employee5);
 
+            bool listExist = employeeList.Contains(employee2);
+            if (listExist)
+            {
+                Console.WriteLine("Employee2 finns i listan.");
+            }
+            else
+            {
+                Console.WriteLine("Employee2 finns EJ i listan.");
+            }
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine();
+            Employee findMale = employeeList.Find(employee => employee.Gender == "Male");
+            if (findMale != null)
+            {
+                Console.WriteLine(value: $"Första manliga är: ID:{findMale.Id} |NAME: {findMale.Name} |SEX: {findMale.Gender} |SALARY: {findMale.Salary} SEK ");
+            }
 
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine();
 
+            List<Employee> findAllMale = employeeList.FindAll(employee => employee.Gender == "Male");
+            if (findAllMale.Count > 0)
+
+                foreach (Employee employee in findAllMale)
+            {
+                Console.WriteLine($"Första manliga är: ID:{employee.Id} |NAME: {employee.Name} |SEX: {employee.Gender} |SALARY: {employee.Salary} SEK ");
+            }
 
 
 
