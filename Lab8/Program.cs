@@ -1,26 +1,30 @@
 ﻿
+using System.Linq;
+
 namespace Lab8
 {
     
         internal class Program
    {
+        private static Employee empolyee1;
+
         static void Main(string[] args)
         {
-            Employee empolyee1 = new Employee(4142, "Ragnar", "Male", 774124);
-            Employee empolyee2 = new Employee(3250, "Konrad Von Chilklan", "Female", 121314);
-            Employee empolyee3 = new Employee(8765, "Soufhiejah", "Female", 100000000);
-            Employee empolyee4 = new Employee(7126, "Kurt-Olof", "Male", 89217);
-            Employee empolyee5 = new Employee(8123, "Julius Petrus Angeruds", "Female", 871);
+            Employee employee1  = new Employee(4142, "Ragnar", "Male", 774124);
+            Employee employee2 = new Employee(3250, "Konrad Von Chilklan", "Female", 121314);
+            Employee employee3 = new Employee(8765, "Soufhiejah", "Female", 100000000);
+            Employee employee4 = new Employee(7126, "Kurt-Olof", "Male", 89217);
+            Employee employee5 = new Employee(8123, "Julius Petrus Angeruds", "Female", 871);
 
             Stack<Employee> stack = new Stack<Employee>();
 
             
 
-            stack.Push(empolyee1);
-            stack.Push(empolyee2);
-            stack.Push(empolyee3);
-            stack.Push(empolyee4);
-            stack.Push(empolyee5);
+            stack.Push(employee1);
+            stack.Push(employee2);
+            stack.Push(employee3);
+            stack.Push(employee4);
+            stack.Push(employee5);
 
             //Stack<Employee> stackCopy = new Stack<Employee>(stack);
 
@@ -46,11 +50,11 @@ namespace Lab8
                     Console.WriteLine($"|SALARY: {popEmployee.Salary} SEK  ");
                     Console.WriteLine($"Objects left in stack {stack.Count} ");
             }
-            stack.Push(empolyee1);
-            stack.Push(empolyee2);
-            stack.Push(empolyee3);
-            stack.Push(empolyee4);
-            stack.Push(empolyee5);
+            stack.Push(employee1);
+            stack.Push(employee2);
+            stack.Push(employee3);
+            stack.Push(employee4);
+            stack.Push(employee5);
             Console.WriteLine();
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine();
@@ -63,6 +67,18 @@ namespace Lab8
             Console.WriteLine($"Objects left in stack {stack.Count} ");
             Console.WriteLine($"ID:{peekEmployee.Id} |NAME: {peekEmployee.Name} |SEX: {peekEmployee.Gender} |SALARY: {peekEmployee.Salary} SEK ");
             Console.WriteLine($"Objects left in stack {stack.Count} ");
+            Console.WriteLine();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine();
+
+           
+            bool employeeExist = stack.Contains(employee3);
+
+            if ( employeeExist )
+            {
+               Console.WriteLine("Employee3 finns i Stacken.");
+            }
+
 
 
 
