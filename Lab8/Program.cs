@@ -26,7 +26,7 @@ namespace Lab8
             stack.Push(employee4);
             stack.Push(employee5);
 
-            //Stack<Employee> stackCopy = new Stack<Employee>(stack);
+           
 
             foreach (Employee employee in stack)
             {
@@ -111,10 +111,12 @@ namespace Lab8
 
             List<Employee> findAllMale = employeeList.FindAll(employee => employee.Gender == "Male");
             if (findAllMale.Count > 0)
-
+            {
+                Console.WriteLine("Alla manliga i listan är följande:");
+            }
                 foreach (Employee employee in findAllMale)
             {
-                Console.WriteLine($"Första manliga är: ID:{employee.Id} |NAME: {employee.Name} |SEX: {employee.Gender} |SALARY: {employee.Salary} SEK ");
+                Console.WriteLine($"ID:{employee.Id} |NAME: {employee.Name} |SEX: {employee.Gender} |SALARY: {employee.Salary} SEK ");
             }
 
 
